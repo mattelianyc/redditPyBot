@@ -1,15 +1,109 @@
+import requests
 import praw
 from credentials import *
 
-my_reddit = praw.Reddit(client_id=client_id, client_secret=client_secret, user_agent=user_agent)
 
-subs = [
-	'barstoolsports',
-	'technology',
-	'rap'
-]
-max_posts = 20
+url = 'https://httpbin.org/ip'
+proxies = {
+    'https':[
+    		'https://159.89.6.41:80',
+			'https://177.67.139.209:80',
+			'https://213.230.68.183:3128',
+			'https://186.159.3.193:34800',
+			'https://132.148.130.96:80',
+			'https://103.229.177.51:31494',
+			'https://35.176.124.96:80',
+			'https://68.183.217.37:80',
+			'https://156.239.11.222:6604',
+			'https://101.108.109.161:8080',
+			'https://138.219.229.212:80',
+			'https://159.203.118.239:8080',
+			'https://119.82.253.206:36744',
+			'https://191.7.201.241:51363',
+			'https://165.227.174.56:3128',
+			'https://128.199.163.5:8080',
+			'https://103.21.92.254:33929',
+			'https://157.230.249.208:8080',
+			'https://176.62.185.72:35540',
+			'https://125.26.99.244:33510',
+			'https://209.97.152.252:8080',
+			'https://192.227.158.57:80',
+			'https://47.88.214.65:9999',
+			'https://188.73.8.12:30114',
+			'https://200.25.254.135:44026',
+			'https://103.248.14.178:44248',
+			'https://103.79.228.249:48444',
+			'https://200.35.56.81:45086',
+			'https://103.16.63.125:58092',
+			'https://79.111.10.158:53281',
+			'https://180.249.152.126:8080',
+			'https://124.120.64.153:8080',
+			'https://103.42.195.70:53281',
+			'https://176.98.75.120:53010',
+			'https://176.196.254.206:61402',
+			'https://202.166.193.95:80',
+			'https://168.235.66.83:8080',
+			'https://119.82.253.103:34675',
+			'https://36.84.223.138:3128',
+			'https://180.243.167.223:3128',
+			'https://35.236.192.70:80',
+			'https://185.144.158.152:80',
+			'https://31.192.42.150:39188',
+			'https://156.239.21.7:6575',
+			'https://156.239.18.75:6604',
+			'https://156.239.11.178:6575',
+			'https://85.15.189.121:37490',
+			'https://118.175.93.189:49774',
+			'https://102.176.160.29:34117',
+			'https://61.216.138.195:3128',
+			'https://186.193.37.21:43956',
+			'https://95.46.225.63:32938',
+			'https://124.105.97.166:49910',
+			'https://36.83.212.111:8888',
+			'https://202.138.229.73:43041',
+			'https://47.74.219.247:9999',
+			'https://156.239.12.235:6604',
+			'https://177.44.211.117:8080',
+			'https://45.77.175.241:808',
+			'https://178.213.130.101:38076',
+			'https://103.74.245.28:55920',
+			'https://41.50.80.94:39414',
+			'https://178.128.109.220:8080',
+			'https://171.100.221.224:8080',
+			'https://171.97.191.147:8080',
+			'https://43.231.215.242:37837',
+			'https://181.129.50.162:41825',
+			'https://109.224.55.10:38366',
+			'https://194.182.67.106:3128',
+			'https://212.3.210.61:58418',
+			'https://170.239.84.54:8080',
+			'https://156.239.4.65:6584',
+			'https://156.239.22.128:6578',
+			'https://156.239.10.131:6584',
+			'https://190.205.29.159:8080',
+			'https://156.239.11.216:6578',
+			'https://156.239.21.82:6532',
+			'https://156.239.12.241:6578',
+			'https://156.239.8.173:6578',
+			'https://156.239.22.250:6539']
+}
+for p in proxies.values():
+	print(p)
 
-for s in subs:
-	for submission in my_reddit.subreddit(s).new(limit=max_posts):
-		print(submission.title)
+ 
+# reddit = praw.Reddit(client_id=client_id, client_secret=client_secret, user_agent=user_agent, username=username, password=password)
+
+# subs = [
+# 	'barstoolsports',
+# 	'technology',
+# 	'rap'
+# ]
+# max_posts = 20
+
+# url = 'https://www.tits.com'
+# title = 'titty docs'
+# reddit.subreddit('rap').submit(title, url=url)
+
+# for s in subs:
+# 	for submission in reddit.subreddit(s).new(limit=max_posts):
+# 		print(submission.title)
